@@ -1,0 +1,131 @@
+<!--Tanto faz se é html ou html.erb, ambos são aceitos pelo Ruby-->
+<!--Ou pode até usar ambos :), obviamente alguns metodos são diferentes-->
+<h1>Fundamentos Ruby On Rails</h1>
+<div id="App">
+  <div id="Cards">
+    <div id="Card">
+      <div id="Conteudo">
+        Utilizando o método padrão.
+      </div>
+      <div id="Footer">
+        01 - Primeiro Componente
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+      <!--Utilizar sempre essa maneira para importar um objeto do controller-->
+        <% @metodoSimples.each do |metodo|%>
+        <%= metodo %>
+        <% end %>
+      </div>
+      <div id="Footer">
+        02- Utilizando o Controller
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+      <!--Utilizar o método de antes mas com SQL-->
+        <% @metodoSQL.each do |metodosql|%>
+        <li><%= metodosql.title %></li>
+        <% end %>
+      </div>
+      <div id="Footer">
+        03 - Utilizando SQL com Controller
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+      <!--Utilizar o método de antes mas com SQL-->
+        <li><%= @filtrarSQL.body %></li>
+      </div>
+      <div id="Footer">
+        04 - Filtrando SQL
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+        <% @repeticao.each do |forJOGOS|%>
+        <li>
+            <%= forJOGOS %>
+            <% end %>
+        </li>
+      </div>
+      <div id="Footer">
+        05 - Repetição FOR
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+        <%= @condicional%>
+      </div>
+      <div id="Footer">
+        06 - Condicional
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+        <% @hash.each do| key, value| %>
+        <li>
+        <%= key + "-> " + value%>
+        <% end %>
+        </li>
+      </div>
+      <div id="Footer">
+        07 - Each.hash
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo" class="JS">
+      </div>
+      <div id="Footer">
+        08 - Usando javascript
+      </div>
+    </div>
+
+    <div id="Card">
+      <div id="Conteudo">
+      <p id="clock"></p>
+      </div>
+      <div id="Footer2">
+        09 - Usando javascript com funções
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script type="text/javascript">
+    document.getElementsByClassName("JS")[0].innerHTML = "Hello Javascript!"
+
+    setInterval(function(){
+
+    function zero(x) {
+      if (x < 10) {
+          x = '0' + x;
+      } return x;
+    }
+    
+    let novaHora = new Date();
+    // getHours trará a hora
+    // geMinutes trará os minutos
+    // getSeconds trará os segundos
+    let hora = novaHora.getHours();
+    let minuto = novaHora.getMinutes();
+    let segundo = novaHora.getSeconds();
+    // Chamamos a função zero para que ela retorne a concatenação
+    // com os minutos e segundos
+    minuto = zero(minuto);
+    segundo = zero(segundo);
+    // Com o textContent, iremos inserir as horas, minutos e segundos
+    // no nosso elemento HTML
+    document.getElementById("clock").innerHTML = hora+':'+minuto+':'+segundo
+},1000)
+
+</script>
