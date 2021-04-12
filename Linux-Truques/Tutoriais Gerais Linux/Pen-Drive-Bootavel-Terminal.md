@@ -62,7 +62,7 @@ No **if** iremos dizer pra o **dd** onde está nosso arquivo ISO e no **of** vam
 
 Na minha situação o comando ira ser:
 ``` 
-$ sudo dd if=~/Downloads/linuxmint-20-cinnamon-64bit.iso  of=/dev/sdb
+$ sudo dd if=~/Downloads/linuxmint-20-cinnamon-64bit.iso  of=/dev/sdb bs=4M status=progess && sync
 ```
 Dependendo do tamanho da ISO o processo pode demorar um pouco, então pegue um café e aguarde o processo.
 
