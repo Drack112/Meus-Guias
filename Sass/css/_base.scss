@@ -1,0 +1,15 @@
+//Repetição for
+@for $i from 1 through 6 {
+    .text-#{$i} {
+        font-size: 15 * $i + px;
+    }
+}
+
+
+$colors: (color1: blue, color2: red, color3: yellow);
+
+@each $key, $colors in $colors{
+    .#{$colors}-text { color: $colors }
+    //.#{$colors}-text { color: lighten($colors, 10} }
+    //.#{$colors}-text { color: darkten($colors, 10} }
+}

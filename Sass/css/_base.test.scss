@@ -1,0 +1,57 @@
+//Arquivo com _ não é pra ser compilado
+
+//Mixin, uma "função" em scss
+@mixin box-shadow($color) {
+    box-shadow: 3px 3px 4px 1px rgba($color, $alpha: 0.6);   
+}
+
+//Mixin com if
+@mixin make-bold($bool) {
+    @if $bool == true {
+        font-weight: bold;
+    }
+}
+
+@mixin text-effect($val) {
+    @if $val == danger {
+        color: red;
+    }
+    @else if $val == alert{
+        color: yellow;
+    }
+}
+
+//Variáveis
+$text-color: orange;
+
+body {
+    background-color: #7159c1;
+    color: $text-color
+}
+
+//Esculpo
+.container {
+    //Importando a "função"
+                        //Parâmetro
+    @include box-shadow(rgba(0,0,0,.6));
+    
+    width: 200px;
+    height: 200px;
+
+    background-color: white;
+
+    //Essa variável só existe dentro de container
+    $text-color: rgb(50, 11, 192);
+
+    color: white;
+
+    p{
+        @include box-shadow(rgba(0,0,0,.6));
+        background-color: gray;
+        height: 100px;
+        width: 100px;
+        color: $text-color;
+        @include make-bold(true);
+        @include text-effect(alert);
+    }
+}
