@@ -1,5 +1,5 @@
 jogos = ["terraria", "eve online", "warframe", "fnaf"]
 
-for jogos in jogos
-  puts jogos
+for c in jogos
+  puts c
 end

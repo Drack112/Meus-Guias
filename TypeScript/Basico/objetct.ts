@@ -1,5 +1,5 @@
 // Define as propriedades do objeto
-const person: {
+let person: {
     name: string;
     age: number;
     description?: string; // Propriedade opcional

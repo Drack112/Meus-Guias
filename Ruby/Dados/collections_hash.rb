@@ -2,7 +2,7 @@ capitais = Hash.new
 #ou capitais = {}
 
 capitais = { acre: "Rio Branco", sao_paulo: "São Paulo"}
-print capitais
+puts capitais
 
 capitais[:minas_gerais] = "Belo Horizonte"
 
