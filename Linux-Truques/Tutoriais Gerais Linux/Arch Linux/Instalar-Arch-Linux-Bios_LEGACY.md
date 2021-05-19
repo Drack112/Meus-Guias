@@ -1,9 +1,3 @@
-<style>
-    h1{
-    text-align: center;
-}
-</style>
-
 <h1>💻Instalação do Arch Linux</h1>
 
 ## Tópicos ✔️
